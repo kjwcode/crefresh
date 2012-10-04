@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <libgen.h>
 #include <syslog.h>
 
@@ -10,5 +11,5 @@ main(int argc, char **argv)
     syslog(LOG_ALERT, "Just a test log message.");
     closelog();
 
-    return 0;
+    return EXIT_SUCCESS;
 }

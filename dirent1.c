@@ -12,7 +12,7 @@ main(int argc, char **argv)
 
     if (argc < 2) {
         fprintf(stderr, "Need command-line arg.\n");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     for (int i = 1; i < argc; i++) {
@@ -21,7 +21,7 @@ main(int argc, char **argv)
         dh = opendir(argv[i]);
         if (!dh) {
             fprintf(stderr, "Unable to open %s\n", argv[1]);
-            exit(1);
+            exit(EXIT_FAILURE);
         }
 
         while ((readdir_r(dh, &cur, &result) == 0) && result) {
@@ -33,6 +33,6 @@ main(int argc, char **argv)
         closedir(dh);
     }
     
-    return 0;
+    return EXIT_SUCCESS;
 }
 
