@@ -35,7 +35,7 @@ main(int argc, char **argv)
             exit(EXIT_FAILURE);
         }
 
-        while ((rb = fread(buf, 1, bufsize, ifh))) {
+        while ((rb = fread(buf, 1, bufsize - 1, ifh))) {
             printf("%s", buf);
             memset(buf, 0, bufsize);
 
